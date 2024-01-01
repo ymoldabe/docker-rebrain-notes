@@ -40,6 +40,8 @@ nano nginx.conf
 ```
 docker exec -it rbm-dkr-03 nginx -s reload
 ```
+ `-s` reload сообщает Nginx о необходимости перезагрузить свою конфигурацию без остановки
+ 
 9. Проверьте работу, обратившись к 127.0.0.1:8890, - в ответ должно возвращать строку Welcome to the training program RebrainMe: Docker! Again!
 ```
 curl 127.0.0.1:8890
