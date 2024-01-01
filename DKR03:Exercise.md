@@ -14,7 +14,10 @@ nano nginx.conf
 - должен пробрасывать скачанный вами конфигурационный файл внутрь контейнера как основной конфигурационный файл `-v /home/user/nginx.conf:/etc/nginx/nginx.conf`
 - образ - nginx:stable `nginx:stable`
 
-Результат: `docker run -d -p 127.0.0.1:8890:80 -v /home/user/nginx.conf:/etc/nginx/nginx.conf --name rbm-dkr-03 nginx:stable`
+Результат: 
+```
+docker run -d -p 127.0.0.1:8890:80 -v /home/user/nginx.conf:/etc/nginx/nginx.conf --name rbm-dkr-03 nginx:stable
+```
 
 3. Проверьте работу, обратившись к 127.0.0.1:8890, - в ответ должно возвращать строку Welcome to the training program RebrainMe: Docker!
 ```
@@ -41,7 +44,7 @@ nano nginx.conf
 docker exec -it rbm-dkr-03 nginx -s reload
 ```
  `-s` reload сообщает Nginx о необходимости перезагрузить свою конфигурацию без остановки
- 
+
 9. Проверьте работу, обратившись к 127.0.0.1:8890, - в ответ должно возвращать строку Welcome to the training program RebrainMe: Docker! Again!
 ```
 curl 127.0.0.1:8890
